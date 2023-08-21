@@ -1,6 +1,8 @@
 # Console-Finances
 
-This is a task for creating JavaScript code for analysing the financial records of a Company.
+- My main task is to recreate the Console Finance App and make it lookl like the screenshot below.
+
+![Console finance App](<starter/images/console app screenshot.png>)
 
 ## Task
 
