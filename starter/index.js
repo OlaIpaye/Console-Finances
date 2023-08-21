@@ -119,4 +119,42 @@ function calculateAverageChange(finances) {
 const averageChange = calculateAverageChange(finances);
 console.log("Average Change:", averageChange);
 
-//
+// Calculate the greatest increase in Profit/Losses(date and amount) over the entire period.
+var maxIncrease = 0;
+var maxIncreaseDate = "";
+for (var i = 1; i < finances.length; i++) {
+  var currentDate = finances[i][0];
+  var currentAmount = finances[i][1];
+  var previousAmount = finances[i - 1][1];
+  var increase = currentAmount - previousAmount;
+  if (increase > maxIncrease) {
+    maxIncrease = increase;
+    maxIncreaseDate = currentDate;
+  }
+}
+// console.log(
+//   "Greatest Increase in Profits/Losses:",
+//   maxIncreaseDate,
+//   maxIncrease
+// );
+
+console.log(
+  `Greatest Increase in Profits/Losses: ${maxIncreaseDate} ($${maxIncrease})`
+);
+
+// Calculate the greatest decrease in Profit/Losses(date and amount) over the entire period.
+var maxDecrease = 0;
+var maxDecreaseDate = "";
+for (var i = 1; i < finances.length; i++) {
+  var currentDate = finances[i][0];
+  var currentAmount = finances[i][1];
+  var previousAmount = finances[i - 1][1];
+  var decrease = previousAmount - currentAmount;
+  if (decrease > maxDecrease) {
+    maxDecrease = decrease;
+    maxDecreaseDate = currentDate;
+  }
+}
+console.log(
+  `Greatest Decrease in Profits/Losses: ${maxDecreaseDate} ($${-maxDecrease})`
+);
